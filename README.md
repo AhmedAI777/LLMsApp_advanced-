@@ -85,7 +85,56 @@ Education applications may contain sensitive information such as:
 
 AI should provide guidance, but it should not independently make important admission, scholarship, hiring, or academic-career decisions.
 
-6. The future work will let my bot decide rather than interaction advisor. Therefore, the chatbot will be Agent AI!!! can make decision and automatically proceed with the apllication and services with Students and Lecturers.
+6. The Architecture:
+   
+                          USER
+                           │
+                           ▼
+                  ┌─────────────────┐
+                  │  Gradio Web UI  │
+                  └────────┬────────┘
+                           │
+             ┌─────────────┴─────────────┐
+             │                           │
+             ▼                           ▼
+      AI Assistant                 Applications
+             │                           │
+             ▼                           ▼
+      Security Layer              SQLite Database
+             │                           │
+             ▼                           ▼
+       Service Router             Reviewer Panel
+             │
+             ▼
+       RAG Pipeline
+             │
+       ┌─────┴─────┐
+       ▼           ▼
+   PDF Files   Embedding Model
+       │           │
+       └─────┬─────┘
+             ▼
+       Chroma Vector DB
+             │
+             ▼
+      Semantic Retrieval
+             │
+             ▼
+       Relevance Check
+             │
+             ▼
+       Conflict Check
+             │
+             ▼
+             LLM
+             │
+             ▼
+      Evidence + Confidence
+             │
+             ▼
+       Final Answer
+
+7. The future work will let my bot decide rather than interaction advisor. Therefore, the chatbot will be Agent AI!!! can make decision and automatically proceed with the apllication and services with Students and Lecturers.
 
 ---
 
