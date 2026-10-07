@@ -85,54 +85,33 @@ Education applications may contain sensitive information such as:
 
 AI should provide guidance, but it should not independently make important admission, scholarship, hiring, or academic-career decisions.
 
-6. The Architecture:
-   
-                          USER
-                           │
-                           ▼
-                  ┌─────────────────┐
-                  │  Gradio Web UI  │
-                  └────────┬────────┘
-                           │
-             ┌─────────────┴─────────────┐
-             │                           │
-             ▼                           ▼
-      AI Assistant                 Applications
-             │                           │
-             ▼                           ▼
-      Security Layer              SQLite Database
-             │                           │
-             ▼                           ▼
-       Service Router             Reviewer Panel
-             │
-             ▼
-       RAG Pipeline
-             │
-       ┌─────┴─────┐
-       ▼           ▼
-   PDF Files   Embedding Model
-       │           │
-       └─────┬─────┘
-             ▼
-       Chroma Vector DB
-             │
-             ▼
-      Semantic Retrieval
-             │
-             ▼
-       Relevance Check
-             │
-             ▼
-       Conflict Check
-             │
-             ▼
-             LLM
-             │
-             ▼
-      Evidence + Confidence
-             │
-             ▼
-       Final Answer
+6. The Architecture
+User Interface
+- User
+- Gradio Web UI
+Main System Paths
+- AI Assistant
+- Applications
+AI Assistant
+1. Security Layer – checks and protects user requests.
+2. Service Router – identifies the correct education service.
+3. RAG Pipeline – retrieves relevant information.
+4. PDF Files – provide the knowledge base.
+5. Embedding Model – converts text into vectors.
+6. Chroma Vector Database – stores and searches the vectors.
+7. Semantic Retrieval – finds the most relevant information.
+8. Relevance Check – checks whether the information is useful.
+9. Conflict Check – detects conflicting information.
+10. LLM – generates the answer.
+11. Evidence + Confidence – validates the response.
+12. Final Answer – presented to the user with sources.
+Application System
+1. Student / Educator submits application
+2. SQLite Database – stores application data.
+3. Reviewer Panel – allows authorized human review.
+4. Final Decision – Approved or Rejected.
+
+   “My architecture has two main paths: an AI Assistant and an Application System. The AI Assistant uses security, service routing, and RAG to retrieve relevant information from PDFs before generating an evidence-based answer. The Application System uses SQLite and a human reviewer to manage applications and make the final decision.”
 
 7. The future work will let my bot decide rather than interaction advisor. Therefore, the chatbot will be Agent AI!!! can make decision and automatically proceed with the apllication and services with Students and Lecturers.
 
