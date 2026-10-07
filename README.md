@@ -1,4 +1,4 @@
-# 🎓 Education AI Assistant
+# 🎓 Education AI Assistant: A Secure RAG-Powered Platform for University Services
 
 An intelligent, evidence-based AI assistant designed to support **university students, lecturers, and academic professionals** through university admission, scholarship, teaching-position, and academic-career guidance.
 
