@@ -111,6 +111,39 @@ Application System
 3. Reviewer Panel – allows authorized human review.
 4. Final Decision – Approved or Rejected.
 
+
+User
+  ↓
+Security Check
+  ↓
+Service Routing
+  ↓
+RAG Retrieval
+  ↓
+Relevance & Conflict Check
+  ↓
+LLM
+  ↓
+Evidence / Confidence Check
+  ↓
+Answer + Sources
+
+
+Applications
+Student / Educator
+        ↓
+Submit Application
+        ↓
+Upload Supporting Documents
+        ↓
+Database
+        ↓
+Human Reviewer
+        ↓
+Approved / Rejected
+        ↓
+Applicant Checks Status
+
    “My architecture has two main paths: an AI Assistant and an Application System. The AI Assistant uses security, service routing, and RAG to retrieve relevant information from PDFs before generating an evidence-based answer. The Application System uses SQLite and a human reviewer to manage applications and make the final decision.”
 
 7. The future work will let my bot decide rather than interaction advisor. Therefore, the chatbot will be Agent AI!!! can make decision and automatically proceed with the apllication and services with Students and Lecturers.
