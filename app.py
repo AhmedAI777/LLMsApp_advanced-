@@ -954,6 +954,7 @@ with gr.Blocks(title=ASSISTANT_NAME) as demo:
         <div class="hero-badge">
             🔐 Secure &nbsp; • &nbsp; 🧠 RAG-Powered &nbsp; • &nbsp;
             📚 Evidence-Based &nbsp; • &nbsp; 🎯 Four Education Services
+            
         </div>
     </div>
     """)
@@ -980,28 +981,28 @@ with gr.Blocks(title=ASSISTANT_NAME) as demo:
             gr.Markdown("""
             <div class="section-title">Intelligent Education Assistant</div>
             <div class="section-description">
-            Ask a question and receive an evidence-based answer using the education knowledge base.
+            Ask a question and receive an evidence-based answer using the pdf university requirements.
             </div>
             """)
 
             question = gr.Textbox(
-                label="Your Education Question",
-                placeholder="Example: What documents are required for university admission?",
+                label="Ask AI Assistant",
+                placeholder="Be Mind that the questions should be related to the services?",
                 lines=5
             )
 
             with gr.Row():
-                ask = gr.Button("🔎 Ask Assistant", variant="primary", elem_classes="primary-action")
-                clear_question = gr.Button("🧹 Clear")
+                ask = gr.Button("Send", variant="primary", elem_classes="primary-action")
+                clear_question = gr.Button("Refresh")
 
             answer = gr.Markdown(
-                "Ask an education-related question to begin.",
+                "AI Assistant for Education.",
                 elem_classes="response-panel"
             )
 
             ask.click(rag_answer, inputs=question, outputs=answer)
             clear_question.click(
-                lambda: ("", "Ask an education-related question to begin."),
+                lambda: ("", "Requirements for Education."),
                 outputs=[question, answer]
             )
 
@@ -1204,7 +1205,7 @@ with gr.Blocks(title=ASSISTANT_NAME) as demo:
                 outputs=status_result
             )
 
-        with gr.Tab("🛡️ Reviewer Panel"):
+        with gr.Tab("🛡️ Addmin Panel"):
             gr.Markdown("""
             <div class="section-title">Authorized Reviewer Workspace</div>
             <div class="section-description">
